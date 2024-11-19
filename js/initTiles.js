@@ -1,3 +1,4 @@
+// Define constants for the player colors and tile colors
 const B = 'blue';
 const G = 'green';
 const Y = 'yellow';
