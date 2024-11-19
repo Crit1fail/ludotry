@@ -1,3 +1,4 @@
+// Defines game constants such as player colors, paths, starting positions, and safe tiles on the 3D board.
 const allPossiblePlayers = ['blue', 'yellow', 'green', 'red'];
 
 const playerPaths = {
