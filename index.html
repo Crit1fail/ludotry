@@ -2,7 +2,9 @@
 
 <head>
     <title>Ludo 3D</title>
+    <!-- Including the x3dom library for 3D rendering -->
     <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js' defer> </script>
+    <!-- Including custom utility scripts for game logic -->
     <script type='text/javascript' src='./js/utils.js' defer> </script>
     <script type='text/javascript' src='./js/constants.js' defer> </script>
     <script type='text/javascript' src='./js/initTiles.js' defer> </script>
@@ -10,9 +12,11 @@
     <script type='text/javascript' src='./js/computerOpponents.js' defer> </script>
     <script type='text/javascript' src='./js/dice.js' defer> </script>
     <script type='text/javascript' src='./js/setupPage.js' defer> </script>
+    <!-- Linking stylesheets for x3dom and custom styles -->
     <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'>
     <link rel='stylesheet' type='text/css' href='./css/style.css'>
     <link rel='stylesheet' type='text/css' href='./css/dice.css'>
+    <!-- Importing Google Fonts for better typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -23,13 +27,15 @@
 
 <body>
     <header>
-        <h1>Ludo 3D</h1>
+        <h1>Ludo 3D</h1> <!-- Title of the game -->
     </header>
 
     <div class="initial-setup">
 
         <section class="player-number">
+            <!-- Section for selecting the number of players -->
             <h2>Select number of players</h2>
+            <!-- Options for 2, 3, or 4 players -->
 
             <div class="player-number-row">
                 <input type="radio" id="players-2" name="number-players">
@@ -43,16 +49,18 @@
             </div>
         </section>
 
+        <!-- Section to add/remove computer opponents -->
 
         <section class="opponents-section">
             <h2>Add computer opponents</h2>
             <div class="opponents-container">
+                <!-- Button to remove opponents -->
                 <button class="delete-opponent">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path d="M0 9h24v6h-24z" />
                     </svg>
                 </button>
-
+<!-- Button to add opponents -->
                 <button class="add-opponent"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                         viewBox="0 0 24 24">
                         <path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z" />
@@ -72,9 +80,9 @@
                 </div>
             </div>
         </section>
-
+ <!-- Button to start the game -->
         <button class="play">Play!</button>
-
+<!-- Instruction button to toggle a popup with game rules -->
         <button class="instruction-button" onclick="toggleInstructionPopup()">
             <svg class="question-mark" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"
                 style="fill:#71a5de">
@@ -83,6 +91,7 @@
         </button>
 
         <div class="instruction-popup" id="instructionPopup">
+            <!-- Instruction content explaining the game -->
             <p>In the first step, you choose the number of players and decide how many opponents will be controlled by
                 the computer.</p>
             <p>Next, a game of Ludo will be played. The first move can be made after rolling a six. After each rolling
@@ -93,6 +102,7 @@
             <p>There are "safe spaces" on the starting point and on colored squares on the board.</p>
             <p>A "safe space" is also created when two tokens of the same player occupy the same space simultaneously.
             </p>
+            <!-- Button to close the popup -->
             <button class="close-button" onclick="toggleInstructionPopup()">
                 <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                     style="fill:#71a5de">
@@ -105,6 +115,7 @@
     </div>
 
     <main>
+        <!-- 3D game board rendering -->
         <x3d width='950px' height='800px'>
             <scene>
                 <NavigationInfo type='"examine" "any"' headlight="false" reverseScroll='true'></NavigationInfo>
@@ -282,6 +293,7 @@
     </side>
 
     <div class="dot-bg"></div>
+    <!-- Script to dynamically generate tiles -->
 
     <script type='text/javascript' src='./js/tileGenerator.js'> </script>
 </body>
